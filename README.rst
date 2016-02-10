@@ -13,6 +13,10 @@ which itself is based on
 Setup
 -----
 
+Ideally, you will just fork this repo and update the base image to point to the
+version of python you would like to use. Currently my own apps require at least
+python 3.5, So as newer versions are released, I will properly tag them.
+
 In the ``examples/`` directory there is a ``supervisord.conf`` which you should
 copy to your own app, then COPY into the image with
 
