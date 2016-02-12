@@ -16,4 +16,7 @@ RUN apt-get update \
 # copy your config like so
 # ADD examples/supervisord.conf /etc/supervisor/conf.d/
 
+# add basic supervisor config
+ADD supervisor/supervisord.conf /etc/supervisor/conf.d/
+
 CMD ["supervisord", "-n"]
