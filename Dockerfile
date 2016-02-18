@@ -7,6 +7,6 @@ RUN pip3 install -U pip
 RUN apk update && apk add -u supervisor
 
 # add basic supervisor config
-ADD supervisor/supervisord.conf /etc/supervisor/conf.d/
+COPY supervisor/supervisord.conf /etc/supervisord.conf
 
 CMD ["supervisord", "-n"]
