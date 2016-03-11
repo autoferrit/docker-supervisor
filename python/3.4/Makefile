@@ -1,12 +1,11 @@
 NAMESPACE=skiftcreative
 APP=supervisor
-BASE=python
-TAG=3.5
+TAG=3.4
 
 build:
-	cd ${BASE}/${TAG} && docker build --no-cache=true -t ${NAMESPACE}/${APP}:${TAG} .
+	docker build --no-cache=true -t ${NAMESPACE}/${APP}:${TAG} .
 run:
-	cd ${BASE}/${TAG} && docker run --name=${APP} --detach=true ${NAMESPACE}/${APP}:${TAG}
+	docker run --name=${APP} --detach=true ${NAMESPACE}/${APP}:${TAG}
 clean:
 	docker stop ${APP} && docker rm ${APP}
 reset: clean
